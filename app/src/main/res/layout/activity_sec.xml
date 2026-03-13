@@ -115,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="#42B72A"
-        android:text="Buat Akun Baru"
+        android:text="Buat Akun"
         android:textAllCaps="false"
         app:cornerRadius="6dp"
         app:layout_constraintEnd_toEndOf="@+id/cardBackground"
