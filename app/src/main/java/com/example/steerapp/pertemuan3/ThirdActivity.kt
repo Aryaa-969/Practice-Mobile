@@ -1,5 +1,6 @@
 package com.example.steerapp.pertemuan3
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -37,7 +38,8 @@ class ThirdActivity : AppCompatActivity() {
                 val nama = binding.inputNoTujuan.text
                 Toast.makeText(this, "Pesan berhasil di kirim ke $nama", Toast.LENGTH_SHORT).show()
 
-
+                val intent = Intent(this, ThirdResultActivity::class.java)
+                startActivity(intent)
             }
         }
     }
