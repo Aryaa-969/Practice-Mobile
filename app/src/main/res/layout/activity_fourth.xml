@@ -19,55 +19,44 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.777" />
 
-    <Button
-        android:id="@+id/btnShowSnackbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SnackBar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.794"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
-
-    <Button
-        android:id="@+id/btnShowAlertDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MaterialAlert"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="325dp"
+        android:layout_height="384dp"
         android:backgroundTint="#FF9E80"
+        app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29"
-        app:cardElevation="4dp">
+        app:layout_constraintVertical_bias="0.28">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_margin="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="293dp"
+            android:layout_height="354dp"
+            android:layout_margin="15dp">
 
             <Button
-                android:id="@+id/btn1"
+                android:id="@+id/btnShowSnackbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tombol 1"
+                android:text="SnackBar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.598" />
+
+            <Button
+                android:id="@+id/btnShowAlertDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MaterialAlert"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.349" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
