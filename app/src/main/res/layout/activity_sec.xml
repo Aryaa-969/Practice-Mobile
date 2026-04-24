@@ -8,18 +8,35 @@
     android:background="#F0F2F5"
     tools:context=".pertemuan2.SecActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#0093FA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:subtitleTextColor="@android:color/white"
+        app:titleTextColor="@android:color/white" />
+
+
     <View
         android:id="@+id/headerBar"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="#1877F2"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="64dp"
+        android:background="#2196F3"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="124dp"
         android:text="GigachaT"
         android:textColor="#FFFFFF"
         android:textSize="40sp"

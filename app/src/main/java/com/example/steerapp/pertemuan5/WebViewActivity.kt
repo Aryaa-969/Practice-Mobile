@@ -1,26 +1,24 @@
-package com.example.steerapp.pertemuan2
+package com.example.steerapp.pertemuan5
 
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.webkit.WebViewClient
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.steerapp.R
-import com.example.steerapp.databinding.ActivitySecBinding
+import com.example.steerapp.databinding.ActivityWebViewBinding
 
-class SecActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySecBinding
+class WebViewActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityWebViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivitySecBinding.inflate(layoutInflater)
+        binding = ActivityWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -28,24 +26,24 @@ class SecActivity : AppCompatActivity() {
             insets
         }
 
-        val inputNama: EditText = findViewById(R.id.inputNama)
-        val btnSubmit: Button = findViewById(R.id.btnSubmit)
-
-        btnSubmit.setOnClickListener {
-            //Mengambil value dari inputNama dan menampilkan di Logcat
-            val nama = inputNama.text
-            Log.e("Klik btnSubmit","Tombol berhasil di tekan. Isi dari inputNama = $nama")
-
-            Toast.makeText(this, "Anda telah melakukan klik pada tombol Submit", Toast.LENGTH_SHORT).show()
-        }
-
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Activity Second"
-            subtitle = "Ini adalah subtitle"
+            title = "Web Merdeka"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+        }
 
+        binding.webView.webViewClient = WebViewClient()
+        binding.webView.settings.javaScriptEnabled = true
+        binding.webView.loadUrl("https://merdeka.com")
+
+        // Agar Toolbar hide/show saat scroll web
+        binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+            if (scrollY > oldScrollY) {
+                binding.appBar.setExpanded(false, true) // sembunyikan
+            } else if (scrollY < oldScrollY) {
+                binding.appBar.setExpanded(true, true) // tampilkan
+            }
         }
     }
 
@@ -55,7 +53,6 @@ class SecActivity : AppCompatActivity() {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
     }

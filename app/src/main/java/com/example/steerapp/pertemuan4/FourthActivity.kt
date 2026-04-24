@@ -3,6 +3,7 @@ package com.example.steerapp.pertemuan4
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -39,10 +40,6 @@ class FourthActivity : AppCompatActivity() {
         val age = intent.getIntExtra("usia",0)
         Log.e("Data Intent","Nama: $name , Usia: $age, Asal: $from")
 
-        binding.btnKembali.setOnClickListener {
-            finish()
-        }
-
         binding.btnShowSnackbar.setOnClickListener {
             Snackbar.make(binding.root, "Ini adalah Snackbar", Snackbar.LENGTH_SHORT)
                 .setAction("Tutup"){
@@ -66,6 +63,15 @@ class FourthActivity : AppCompatActivity() {
                 .show()
         }
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Activity Fourth"
+            subtitle = "Ini adalah subtitle"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+
+        }
+
     }
 
     override fun onStart() {
@@ -76,5 +82,16 @@ class FourthActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.e("onDestroy", "{fourth_activity} dihapus dari stack")
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

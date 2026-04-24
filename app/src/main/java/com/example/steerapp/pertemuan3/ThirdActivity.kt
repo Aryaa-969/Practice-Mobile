@@ -2,6 +2,7 @@ package com.example.steerapp.pertemuan3
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -41,6 +42,26 @@ class ThirdActivity : AppCompatActivity() {
                 val intent = Intent(this, ThirdResultActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Activity Third"
+            subtitle = "Ini adalah subtitle"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
