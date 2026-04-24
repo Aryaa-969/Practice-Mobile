@@ -5,8 +5,36 @@
     <item
         android:id="@+id/action_search"
         android:title="Search"
-        android:icon="@android:drawable/ic_menu_search"
+        android:icon="@drawable/outline_add_shopping_cart_24"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_show_hidden"
+        android:title="Show Hidden Items"
+        android:checkable="true"
+        android:checked="false"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sort"
+        android:title="Sort By"
+        app:showAsAction="never">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/sort_name"
+                    android:title="Sort by Name"
+                    android:checked="true" /> <item
+                android:id="@+id/sort_date"
+                android:title="Sort by Date" />
+
+                <item
+                    android:id="@+id/sort_size"
+                    android:title="Sort by Size" />
+            </group>
+        </menu>
+    </item>
 
     <item
         android:id="@+id/action_settings"

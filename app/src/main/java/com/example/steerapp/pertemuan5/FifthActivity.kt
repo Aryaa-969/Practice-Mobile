@@ -2,7 +2,6 @@ package com.example.steerapp.pertemuan5
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -12,7 +11,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.steerapp.R
 import com.example.steerapp.databinding.ActivityFifthBinding
-import com.example.steerapp.pertemuan3.ThirdResultActivity
 
 class FifthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFifthBinding
@@ -39,6 +37,7 @@ class FifthActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
 
+
         }
 
         binding.btnWebView.setOnClickListener {
@@ -61,6 +60,36 @@ class FifthActivity : AppCompatActivity() {
 
             R.id.action_search -> {
                 Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            // --- Handling untuk Checkbox ---
+            R.id.action_show_hidden -> {
+                // Membalikkan status (toggle) dari checked menjadi unchecked, atau sebaliknya
+                item.isChecked = !item.isChecked
+
+                val status = if (item.isChecked) "Aktif" else "Tidak Aktif"
+                Toast.makeText(this, "Show Hidden Items: $status", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            // --- Handling untuk Radio Buttons (Sub-menu Sort By) ---
+            R.id.sort_name -> {
+                // Mengubah status menjadi tercentang
+                item.isChecked = true
+                Toast.makeText(this, "Diurutkan berdasarkan Nama", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.sort_date -> {
+                item.isChecked = true
+                Toast.makeText(this, "Diurutkan berdasarkan Tanggal", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.sort_size -> {
+                item.isChecked = true
+                Toast.makeText(this, "Diurutkan berdasarkan Ukuran", Toast.LENGTH_SHORT).show()
                 true
             }
 
