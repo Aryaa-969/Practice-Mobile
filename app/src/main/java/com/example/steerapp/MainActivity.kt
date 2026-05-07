@@ -1,5 +1,6 @@
 package com.example.steerapp
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.steerapp.databinding.ActivityMainBinding
 import com.example.steerapp.pertemuan4.FourthActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -33,5 +35,26 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        binding.btnLogout.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+
+                    val intent = Intent(this, AuthActivity::class.java)
+                    startActivity(intent)
+
+                    // 3. Tutup MainActivity
+                    dialog.dismiss()
+                    finish()
+                }.setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                }.show()
+            }
     }
 }
