@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SteerApp">
         <activity
+            android:name=".BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.pertemuan7.SeventhActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
@@ -24,24 +30,24 @@
         </activity>
         <activity
             android:name=".AuthActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".pertemuan5.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan5.FifthActivity"
+            android:name=".Home.pertemuan5.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan4.FourthActivity"
+            android:name=".Home.pertemuan5.FifthActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan3.ThirdResultActivity"
+            android:name=".Home.pertemuan4.FourthActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan3.ThirdActivity"
+            android:name=".Home.pertemuan3.ThirdResultActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan2.SecActivity"
+            android:name=".Home.pertemuan3.ThirdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.pertemuan2.SecActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

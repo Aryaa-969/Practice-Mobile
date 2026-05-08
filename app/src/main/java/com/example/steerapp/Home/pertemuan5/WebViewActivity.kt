@@ -1,7 +1,11 @@
-package com.example.steerapp.pertemuan5
+package com.example.steerapp.Home.pertemuan5
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.webkit.WebChromeClient
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -40,23 +44,23 @@ class WebViewActivity : AppCompatActivity() {
         val progressBar = binding.progressBar
 
 // 2. Buat WebChromeClient untuk menjalankan garis loading (1% sampai 100%)
-        binding.webView.webChromeClient = object : android.webkit.WebChromeClient() {
-            override fun onProgressChanged(view: android.webkit.WebView?, newProgress: Int) {
+        binding.webView.webChromeClient = object : WebChromeClient() {
+            override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 super.onProgressChanged(view, newProgress)
                 progressBar.progress = newProgress
 
                 // Sembunyikan garis kalau sudah 100% selesai loading
                 if (newProgress == 100) {
-                    progressBar.visibility = android.view.View.GONE
+                    progressBar.visibility = View.GONE
                 }
             }
         }
 
 // 3. Buat WebViewClient untuk memunculkan garis saat web baru mulai dimuat
-        binding.webView.webViewClient = object : android.webkit.WebViewClient() {
-            override fun onPageStarted(view: android.webkit.WebView?, url: String?, favicon: android.graphics.Bitmap?) {
+        binding.webView.webViewClient = object : WebViewClient() {
+            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
-                progressBar.visibility = android.view.View.VISIBLE // Munculkan garis
+                progressBar.visibility = View.VISIBLE // Munculkan garis
             }
         }
 

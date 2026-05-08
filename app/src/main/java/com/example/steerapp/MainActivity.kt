@@ -1,6 +1,5 @@
 package com.example.steerapp
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.steerapp.databinding.ActivityMainBinding
-import com.example.steerapp.pertemuan4.FourthActivity
+import com.example.steerapp.Home.pertemuan4.FourthActivity
+import com.example.steerapp.Home.pertemuan7.SeventhActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +35,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
+        binding.btnToSeventh.setOnClickListener {
+            val intent = Intent(this, SeventhActivity::class.java)
+            startActivity(intent)
+        }
+
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
         binding.btnLogout.setOnClickListener {
@@ -56,5 +62,10 @@ class MainActivity : AppCompatActivity() {
                     dialog.dismiss()
                 }.show()
             }
+
+        binding.btnToBase.setOnClickListener {
+            val intent = Intent(this, BaseActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

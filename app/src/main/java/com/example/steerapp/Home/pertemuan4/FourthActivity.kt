@@ -1,19 +1,14 @@
-package com.example.steerapp.pertemuan4
+package com.example.steerapp.Home.pertemuan4
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.steerapp.MainActivity
 import com.example.steerapp.R
 import com.example.steerapp.databinding.ActivityFourthBinding
-import com.example.steerapp.databinding.ActivityThirdBinding
-import com.example.steerapp.pertemuan3.ThirdResultActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
