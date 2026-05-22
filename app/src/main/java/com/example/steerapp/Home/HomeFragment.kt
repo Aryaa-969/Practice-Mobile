@@ -11,6 +11,7 @@ import com.example.steerapp.Home.pertemuan3.ThirdActivity
 import com.example.steerapp.Home.pertemuan4.FourthActivity
 import com.example.steerapp.Home.pertemuan5.FifthActivity
 import com.example.steerapp.Home.pertemuan7.SeventhActivity
+import com.example.steerapp.Home.pertemuan9.NinthActivity
 import com.example.steerapp.R
 import com.example.steerapp.databinding.FragmentHomeBinding
 
@@ -25,6 +26,7 @@ class HomeFragment : Fragment() {
         //return inflater.inflate(R.layout.fragment_home, container, false)
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,6 +53,11 @@ class HomeFragment : Fragment() {
 
         binding.btnToSeventh.setOnClickListener{
             val intent = Intent(requireContext(), SeventhActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToNinth.setOnClickListener{
+            val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
 

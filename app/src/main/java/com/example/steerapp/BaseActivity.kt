@@ -28,14 +28,14 @@ class BaseActivity : AppCompatActivity() {
             insets
         }
 
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.apply {
-            title = "Activity Base"
-            subtitle = "Ini adalah subtitle"
-            setDisplayHomeAsUpEnabled(true)
-            setDisplayShowHomeEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
-        }
+//        setSupportActionBar(binding.toolbar)
+//        supportActionBar?.apply {
+//            title = "Activity Base"
+//            subtitle = "Ini adalah subtitle"
+//            setDisplayHomeAsUpEnabled(true)
+//            setDisplayShowHomeEnabled(true)
+//            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+//        }
 
         replaceFragment(HomeFragment())
 
@@ -66,54 +66,54 @@ class BaseActivity : AppCompatActivity() {
             .commit()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                onBackPressedDispatcher.onBackPressed()
-                true
-            }
-
-            R.id.action_search -> {
-                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
-                true
-            }
-
-            // --- Handling untuk Checkbox ---
-            R.id.action_show_hidden -> {
-                // Membalikkan status (toggle) dari checked menjadi unchecked, atau sebaliknya
-                item.isChecked = !item.isChecked
-
-                val status = if (item.isChecked) "Aktif" else "Tidak Aktif"
-                Toast.makeText(this, "Show Hidden Items: $status", Toast.LENGTH_SHORT).show()
-                true
-            }
-
-            // --- Handling untuk Radio Buttons (Sub-menu Sort By) ---
-            R.id.sort_name -> {
-                // Mengubah status menjadi tercentang
-                item.isChecked = true
-                Toast.makeText(this, "Diurutkan berdasarkan Nama", Toast.LENGTH_SHORT).show()
-                true
-            }
-
-            R.id.sort_date -> {
-                item.isChecked = true
-                Toast.makeText(this, "Diurutkan berdasarkan Tanggal", Toast.LENGTH_SHORT).show()
-                true
-            }
-
-            R.id.sort_size -> {
-                item.isChecked = true
-                Toast.makeText(this, "Diurutkan berdasarkan Ukuran", Toast.LENGTH_SHORT).show()
-                true
-            }
-
-            R.id.action_settings -> {
-                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return when (item.itemId) {
+//            android.R.id.home -> {
+//                onBackPressedDispatcher.onBackPressed()
+//                true
+//            }
+//
+//            R.id.action_search -> {
+//                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+//                true
+//            }
+//
+//            // --- Handling untuk Checkbox ---
+//            R.id.action_show_hidden -> {
+//                // Membalikkan status (toggle) dari checked menjadi unchecked, atau sebaliknya
+//                item.isChecked = !item.isChecked
+//
+//                val status = if (item.isChecked) "Aktif" else "Tidak Aktif"
+//                Toast.makeText(this, "Show Hidden Items: $status", Toast.LENGTH_SHORT).show()
+//                true
+//            }
+//
+//            // --- Handling untuk Radio Buttons (Sub-menu Sort By) ---
+//            R.id.sort_name -> {
+//                // Mengubah status menjadi tercentang
+//                item.isChecked = true
+//                Toast.makeText(this, "Diurutkan berdasarkan Nama", Toast.LENGTH_SHORT).show()
+//                true
+//            }
+//
+//            R.id.sort_date -> {
+//                item.isChecked = true
+//                Toast.makeText(this, "Diurutkan berdasarkan Tanggal", Toast.LENGTH_SHORT).show()
+//                true
+//            }
+//
+//            R.id.sort_size -> {
+//                item.isChecked = true
+//                Toast.makeText(this, "Diurutkan berdasarkan Ukuran", Toast.LENGTH_SHORT).show()
+//                true
+//            }
+//
+//            R.id.action_settings -> {
+//                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
+//                true
+//            }
+//
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
 }
