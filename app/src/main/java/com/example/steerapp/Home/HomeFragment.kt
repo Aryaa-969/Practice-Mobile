@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.steerapp.Home.pertemuan10.TenthActivity
 import com.example.steerapp.Home.pertemuan2.SecActivity
 import com.example.steerapp.Home.pertemuan3.ThirdActivity
 import com.example.steerapp.Home.pertemuan4.FourthActivity
@@ -58,6 +59,11 @@ class HomeFragment : Fragment() {
 
         binding.btnToNinth.setOnClickListener{
             val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToTenth.setOnClickListener{
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
 
