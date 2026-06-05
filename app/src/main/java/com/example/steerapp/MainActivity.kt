@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 }.setNegativeButton("Batal") { dialog, _ ->
                     dialog.dismiss()
                 }.show()
-            }
+        }
 
         binding.btnToBase.setOnClickListener {
             val intent = Intent(this, BaseActivity::class.java)
