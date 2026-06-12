@@ -4,9 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.steerapp.Home.pertemuan10.TenthActivity
@@ -17,10 +21,12 @@ import com.example.steerapp.Home.pertemuan5.FifthActivity
 import com.example.steerapp.Home.pertemuan7.SeventhActivity
 import com.example.steerapp.Home.pertemuan9.NinthActivity
 import com.example.steerapp.Home.photo.PhotoAdapter
+import com.example.steerapp.Massage.tutorial.TutorialMessageActivity
 import com.example.steerapp.R
 import com.example.steerapp.data.api.CatFactApiClient
 import com.example.steerapp.data.api.PhotoApiClient
 import com.example.steerapp.databinding.FragmentHomeBinding
+import com.example.steerapp.note.NotesFragment
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -38,6 +44,11 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Message"
+
+        setHasOptionsMenu(true)
 
         binding.btnToSec.setOnClickListener {
             val intent = Intent(requireContext(), SecActivity::class.java)
@@ -114,5 +125,4 @@ class HomeFragment : Fragment() {
             }
         }
     }
-
 }

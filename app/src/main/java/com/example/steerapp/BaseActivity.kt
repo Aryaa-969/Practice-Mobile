@@ -13,6 +13,7 @@ import com.example.steerapp.Massage.MessageFragment
 import com.example.steerapp.More.MoreFragment
 import com.example.steerapp.databinding.ActivityBaseBinding
 import com.example.steerapp.databinding.ActivityMainBinding
+import com.example.steerapp.note.NotesFragment
 
 class BaseActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBaseBinding
@@ -51,6 +52,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.more -> {
                     replaceFragment(MoreFragment())
+                    true
+                }
+                R.id.notes -> {
+                    replaceFragment(NotesFragment())
                     true
                 }
                 else ->false
