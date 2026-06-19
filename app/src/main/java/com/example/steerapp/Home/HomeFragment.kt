@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.steerapp.Home.pertemuan10.TenthActivity
+import com.example.steerapp.Home.pertemuan13.ThirteenthActivity
 import com.example.steerapp.Home.pertemuan2.SecActivity
 import com.example.steerapp.Home.pertemuan3.ThirdActivity
 import com.example.steerapp.Home.pertemuan4.FourthActivity
@@ -82,6 +83,11 @@ class HomeFragment : Fragment() {
 
         binding.btnToTenth.setOnClickListener {
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnTo13.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
             startActivity(intent)
         }
 
